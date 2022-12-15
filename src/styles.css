@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 2rem;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background: #9CECFB;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+    color: white;
+}
+article{
+    padding: 8px;
+    font-size: 2rem;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+article h3{
+    padding: 8px;
+}
+.mat-mdc-form-field {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media(min-width: 600px){
+    article{
+        padding: 36px;
+    }
+}

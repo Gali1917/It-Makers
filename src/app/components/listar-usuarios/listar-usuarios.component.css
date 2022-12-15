@@ -1,0 +1,22 @@
+
+.buttons{
+    position: sticky;
+    top: 24px;
+    width: 328px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    z-index: 2;
+
+}
+.buttons button{
+    margin: 6px;
+    width: 148px;
+
+}
+
+.card-users{
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 48px;
+}
+

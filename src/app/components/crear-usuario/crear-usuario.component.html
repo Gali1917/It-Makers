@@ -1,0 +1,52 @@
+<div class="container">
+  <article class="article">
+    <form class="example-form" [formGroup]="usuarioForm" (ngSubmit)="agregarUsuario()">
+      <mat-form-field class="example-full-width">
+        <mat-label>It Makers</mat-label>
+        <input matInput disabled value="Registro">
+      </mat-form-field>
+
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>Nombre</mat-label>
+              <input matInput formControlName="nombre">
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label placeholder="example@email.com">Email</mat-label>
+              <input matInput formControlName="email">
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td><mat-form-field class="example-full-width">
+              <mat-label placeholder="30000000">Telefono</mat-label>
+              <input matInput formControlName="telefono">
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>Rol</mat-label>
+              <input matInput placeholder="Usuario" formControlName="rol">
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+      <table class="example-full-width" cellspacing="0">
+
+      </table>
+      <div class="buttons">
+        <button mat-raised-button color="accent" routerLink="">Volver</button>
+        <button type="submit" mat-raised-button color="primary" routerLink="/crear-usuario">Crear Usuario</button>
+      </div>
+    </form>
+
+  </article>
+</div>
