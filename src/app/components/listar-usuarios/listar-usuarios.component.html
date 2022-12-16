@@ -20,8 +20,8 @@
                             <p>{{usuario.telefono}}</p>
                         </mat-card-content>
                         <mat-card-actions>
-                            <button (click)="eliminarUsuario(usuario._id)" mat-button>Borrar</button>
                             <button [routerLink]="['/editar-usuario', usuario._id]" mat-button>Editar</button>
+                            <button (click)="eliminarUsuario(usuario._id)" mat-button>Borrar</button>
                         </mat-card-actions>
                     </mat-card>
                 </li>

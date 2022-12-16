@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Usuario } from 'src/app/models/usuario';
 import { ToastrService } from 'ngx-toastr';
@@ -10,10 +10,10 @@ import { UsuarioService } from 'src/app/services/usuario.service';
   templateUrl: './crear-usuario.component.html',
   styleUrls: ['./crear-usuario.component.css']
 })
-export class CrearUsuarioComponent {
+export class CrearUsuarioComponent implements OnInit {
 
   usuarioForm: FormGroup;
-  titulo = 'Registro';
+  titulo = 'Registrar';
   id: string | null;
 
   constructor(private fb: FormBuilder, private router: Router, private toastr: ToastrService, private _usuarioService: UsuarioService, private aRouter: ActivatedRoute) {
@@ -27,7 +27,7 @@ export class CrearUsuarioComponent {
     this.id = this.aRouter.snapshot.paramMap.get('id');
   }
 
-  ngonInit(): void {
+  ngOnInit(): void {
     this.editar();
   }
 
@@ -42,19 +42,32 @@ export class CrearUsuarioComponent {
       imagen: this.usuarioForm.get('imagen')?.value,
 
     }
-    console.log(usuario);
-    this._usuarioService.nuevoUsuario(usuario).subscribe(data => {
 
-      this.toastr.success('El usuario fue registrado con exito!', 'Usuario Registrado!');
-      this.router.navigate(['/']);
-    }, error => {
-      console.log(error);
-      this.usuarioForm.reset();
-    })
+    if (this.id !== null) {
+      //Editar Usuario
+      this._usuarioService.editarUsuario(this.id, usuario).subscribe(data => {
+        this.toastr.info('El usuario fue actualizado con exito!', 'Usuario Actualizado!');
+        this.router.navigate(['/']);
+      }, error => {
+        console.log(error);
+        this.usuarioForm.reset();
+      })
+    } else {
+      //Agregar producto
+      console.log(usuario);
+      this._usuarioService.nuevoUsuario(usuario).subscribe(data => {
+        
+        this.toastr.success('El usuario fue registrado con exito!', 'Usuario Registrado!');
+        this.router.navigate(['/']);
+      }, error => {
+        console.log(error);
+        this.usuarioForm.reset();
+      })
+    }
   }
   editar() {
     if (this.id !== null) {
-      this.titulo = 'Editar producto';
+      this.titulo = 'Editar Usuario';
       this._usuarioService.obtenerUsuario(this.id).subscribe(data => {
         this.usuarioForm.setValue({
           nombre: data.nombre,

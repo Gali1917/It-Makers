@@ -52,7 +52,7 @@
       </table>
       <div class="buttons">
         <button mat-raised-button color="accent" routerLink="">Volver</button>
-        <button type="submit" mat-raised-button color="primary" routerLink="/crear-usuario">Crear Usuario</button>
+        <button (click)="agregarUsuario()" type="submit" mat-raised-button color="primary" routerLink="">{{titulo}}</button>
       </div>
     </form>
 
