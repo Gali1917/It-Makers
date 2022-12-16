@@ -24,8 +24,12 @@
                             <button (click)="eliminarUsuario(usuario._id)" mat-button>Borrar</button>
                         </mat-card-actions>
                     </mat-card>
+                    
                 </li>
+
             </mat-tab>
+
+            <!-- Consumo de API reqres.in -->
             <mat-tab label="Reqres.in">
                 <li *ngFor="let user of listarReqres">
                     <mat-card class="card-users">

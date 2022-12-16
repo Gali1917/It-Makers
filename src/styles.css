@@ -26,7 +26,7 @@ body {
 article{
     padding: 8px;
     font-size: 2rem;
-    max-width: 1024px;
+    max-width: 1280px;
     margin: 0 auto;
 }
 article h3{
@@ -37,7 +37,14 @@ article h3{
     max-width: 600px;
     margin: 0 auto;
 }
-
+.mat-mdc-tab-body-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.mat-mdc-card{
+    margin: 0 56px;
+}
 @media(min-width: 600px){
     article{
         padding: 36px;
