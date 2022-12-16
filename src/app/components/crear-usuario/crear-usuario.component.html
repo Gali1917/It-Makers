@@ -3,7 +3,7 @@
     <form class="example-form" [formGroup]="usuarioForm" (ngSubmit)="agregarUsuario()">
       <mat-form-field class="example-full-width">
         <mat-label>It Makers</mat-label>
-        <input matInput disabled value="Registro">
+        <input matInput disabled value={{titulo}}>
       </mat-form-field>
 
       <table class="example-full-width" cellspacing="0">
@@ -35,6 +35,14 @@
             <mat-form-field class="example-full-width">
               <mat-label>Rol</mat-label>
               <input matInput placeholder="Usuario" formControlName="rol">
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>Imagen</mat-label>
+              <input matInput value="https://images.pexels.com/photos/2375034/pexels-photo-2375034.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" formControlName="imagen">
             </mat-form-field>
           </td>
         </tr>

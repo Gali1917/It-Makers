@@ -8,7 +8,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
 import { ListarUsuariosComponent } from './components/listar-usuarios/listar-usuarios.component';
+
 import { ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
 
 //Agular Material
 import {MatButtonModule} from '@angular/material/button';
@@ -17,7 +20,6 @@ import {MatCardModule} from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -27,7 +29,7 @@ import { ToastrModule } from 'ngx-toastr';
   declarations: [
     AppComponent,
     CrearUsuarioComponent,
-    ListarUsuariosComponent
+    ListarUsuariosComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +44,7 @@ import { ToastrModule } from 'ngx-toastr';
     MatInputModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

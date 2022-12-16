@@ -5,92 +5,42 @@
             <button mat-raised-button color="accent">Iniciar Sesion</button>
         </div>
         <mat-tab-group animationDuration="2000ms">
-            <mat-tab label="Usuarios registrados">
-                <mat-card class="card-users">
-                    <mat-card-header>
-                        <div mat-card-avatar class="example-header-image"></div>
-                        <mat-card-title>Nombre</mat-card-title>
-                        <mat-card-subtitle>Rol</mat-card-subtitle>
-                    </mat-card-header>
-                    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+            <mat-tab label="Usuarios registrados" >
+                <li *ngFor="let usuario of listarUsuarios">
+                    <mat-card class="card-users">
+                        <mat-card-header>
+                            <div mat-card-avatar class="example-header-image"></div>
+                            <mat-card-title>{{usuario.nombre}}</mat-card-title>
+                            <mat-card-subtitle>{{usuario.rol}}</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image src={{usuario.imagen}}
                         alt="Foto de perfil">
-                    <mat-card-content>
-                        <p>Telefono</p>
-                        <p>Correo</p>
-                    </mat-card-content>
-                    <mat-card-actions>
-                        <button mat-button>Borrar</button>
-                        <button mat-button>Editar</button>
-                    </mat-card-actions>
-                </mat-card>
-                <mat-card class="card-users">
-                    <mat-card-header>
-                        <div mat-card-avatar class="example-header-image"></div>
-                        <mat-card-title>Nombre</mat-card-title>
-                        <mat-card-subtitle>Rol</mat-card-subtitle>
-                    </mat-card-header>
-                    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-                        alt="Foto de perfil">
-                    <mat-card-content>
-                        <p>Telefono</p>
-                        <p>Correo</p>
-                    </mat-card-content>
-                    <mat-card-actions>
-                        <button mat-button>Borrar</button>
-                        <button mat-button>Editar</button>
-                    </mat-card-actions>
-                </mat-card><mat-card class="card-users">
-                    <mat-card-header>
-                        <div mat-card-avatar class="example-header-image"></div>
-                        <mat-card-title>Nombre</mat-card-title>
-                        <mat-card-subtitle>Rol</mat-card-subtitle>
-                    </mat-card-header>
-                    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-                        alt="Foto de perfil">
-                    <mat-card-content>
-                        <p>Telefono</p>
-                        <p>Correo</p>
-                    </mat-card-content>
-                    <mat-card-actions>
-                        <button mat-button>Borrar</button>
-                        <button mat-button>Editar</button>
-                    </mat-card-actions>
-                </mat-card><mat-card class="card-users">
-                    <mat-card-header>
-                        <div mat-card-avatar class="example-header-image"></div>
-                        <mat-card-title>Nombre</mat-card-title>
-                        <mat-card-subtitle>Rol</mat-card-subtitle>
-                    </mat-card-header>
-                    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-                        alt="Foto de perfil">
-                    <mat-card-content>
-                        <p>Telefono</p>
-                        <p>Correo</p>
-                    </mat-card-content>
-                    <mat-card-actions>
-                        <button mat-button>Borrar</button>
-                        <button mat-button>Editar</button>
-                    </mat-card-actions>
-                </mat-card>
+                        <mat-card-content>
+                            <p>{{usuario.email}}</p>
+                            <p>{{usuario.telefono}}</p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button (click)="eliminarUsuario(usuario._id)" mat-button>Borrar</button>
+                            <button [routerLink]="['/editar-usuario', usuario._id]" mat-button>Editar</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </li>
             </mat-tab>
             <mat-tab label="Reqres.in">
-                <mat-card class="card-users">
-                    <mat-card-header>
-                        <div mat-card-avatar class="example-header-image"></div>
-                        <mat-card-title>Nombre</mat-card-title>
-                        <mat-card-subtitle>Rol</mat-card-subtitle>
-                    </mat-card-header>
-                    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                <li *ngFor="let user of listarReqres">
+                    <mat-card class="card-users">
+                        <mat-card-header>
+                            <div mat-card-avatar class="example-header-image"></div>
+                            <mat-card-title>{{user.first_name}}</mat-card-title>
+                            <mat-card-subtitle>{{user.last_name}}</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image src={{user.avatar}}
                         alt="Foto de perfil">
-                    <mat-card-content>
-                        <p>Telefono</p>
-                        <p>Correo</p>
-                    </mat-card-content>
-                    <mat-card-actions>
-                        <button mat-button>Borrar</button>
-                        <button mat-button>Editar</button>
-                    </mat-card-actions>
-                </mat-card>
+                        <mat-card-content>
+                            <p>{{user.email}}</p>
+                        </mat-card-content>
+                    </mat-card>
+                </li>
             </mat-tab>
         </mat-tab-group>
 
