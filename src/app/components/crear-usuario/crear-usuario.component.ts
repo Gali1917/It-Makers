@@ -4,6 +4,7 @@ import { Usuario } from 'src/app/models/usuario';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-crear-usuario',
@@ -16,13 +17,13 @@ export class CrearUsuarioComponent implements OnInit {
   titulo = 'Registrar';
   id: string | null;
 
-  constructor(private fb: FormBuilder, private router: Router, private toastr: ToastrService, private _usuarioService: UsuarioService, private aRouter: ActivatedRoute) {
+  constructor(private fb: FormBuilder, private router: Router, private toastr: ToastrService, private _usuarioService: UsuarioService, private aRouter: ActivatedRoute, private _location: Location) {
     this.usuarioForm = this.fb.group({
       nombre: ['', Validators.required],
       email: ['', Validators.required],
       telefono: ['', Validators.required],
-      rol: ['', Validators.required],
       imagen: ['', Validators.required],
+      password: ['', Validators.required]
     })
     this.id = this.aRouter.snapshot.paramMap.get('id');
   }
@@ -32,14 +33,12 @@ export class CrearUsuarioComponent implements OnInit {
   }
 
   agregarUsuario() {
-    console.log(this.usuarioForm);
-    console.log(this.usuarioForm.get('nombre')?.value);
     const usuario: Usuario = {
       nombre: this.usuarioForm.get('nombre')?.value,
       email: this.usuarioForm.get('email')?.value,
       telefono: this.usuarioForm.get('telefono')?.value,
-      rol: this.usuarioForm.get('rol')?.value,
       imagen: this.usuarioForm.get('imagen')?.value,
+      password: this.usuarioForm.get('password')?.value,
 
     }
 
@@ -47,18 +46,18 @@ export class CrearUsuarioComponent implements OnInit {
       //Editar Usuario
       this._usuarioService.editarUsuario(this.id, usuario).subscribe(data => {
         this.toastr.info('El usuario fue actualizado con exito!', 'Usuario Actualizado!');
-        this.router.navigate(['/']);
+        this.router.navigate(['/admin']);
       }, error => {
         console.log(error);
         this.usuarioForm.reset();
       })
     } else {
-      //Agregar producto
+      //Agregar usuario
       console.log(usuario);
       this._usuarioService.nuevoUsuario(usuario).subscribe(data => {
         
         this.toastr.success('El usuario fue registrado con exito!', 'Usuario Registrado!');
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       }, error => {
         console.log(error);
         this.usuarioForm.reset();
@@ -73,11 +72,14 @@ export class CrearUsuarioComponent implements OnInit {
           nombre: data.nombre,
           email: data.email,
           telefono: data.telefono,
-          rol: data.rol,
-          imagen: data.imagen
+          imagen: data.imagen,
+          password: data.password,
         })
       })
     }
+  }
+  back(){
+    this._location.back();
   }
 }
 

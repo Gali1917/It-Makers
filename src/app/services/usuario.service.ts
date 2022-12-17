@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import { Usuario } from '../models/usuario';
+import { SignIn } from '../models/signin';
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +27,8 @@ export class UsuarioService {
   }
   editarUsuario(id: string, usuario: Usuario): Observable<any>{
     return this.http.put(this.url + id, usuario);
+  }
+  iniciarSesion(signIn: SignIn): Observable<any>{
+    return this.http.post("http://localhost:5005/api/signin", signIn);
   }
 }

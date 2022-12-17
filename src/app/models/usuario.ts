@@ -3,13 +3,13 @@ export class Usuario{
     nombre: string;
     email: string;
     telefono: number;
-    rol: string;
     imagen: string;
-    constructor(nombre: string, email: string, telefono: number, rol: string, imagen: string){
+    password: string;
+    constructor(nombre: string, email: string, telefono: number, imagen: string, password: string){
         this.nombre = nombre;
         this.email = email;
         this.telefono = telefono;
-        this.rol = rol;
         this.imagen = imagen;
+        this.password = password;
     }
 }

@@ -1,0 +1,31 @@
+<div class="container">
+    <article class="article">
+        <div class="buttons">
+            <button mat-raised-button color="primary" routerLink="/crear-usuario">Crear Usuario</button>
+            <button mat-raised-button color="accent" routerLink="/iniciar-sesion">Iniciar Sesion</button>
+        </div>
+        <mat-tab-group animationDuration="2000ms">
+            <mat-tab class="titulo-cards" label="Usuarios registrados" >
+            </mat-tab>
+
+            <!-- Consumo de API reqres.in -->
+            <mat-tab label="Reqres.in">
+                <li *ngFor="let user of listarReqres">
+                    <mat-card class="card-users">
+                        <mat-card-header>
+                            <div mat-card-avatar class="example-header-image"></div>
+                            <mat-card-title>{{user.first_name}}</mat-card-title>
+                            <mat-card-subtitle>{{user.last_name}}</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image src={{user.avatar}}
+                        alt="Foto de perfil">
+                        <mat-card-content>
+                            <p>{{user.email}}</p>
+                        </mat-card-content>
+                    </mat-card>
+                </li>
+            </mat-tab>
+        </mat-tab-group>
+
+    </article>
+</div>

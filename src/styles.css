@@ -32,6 +32,10 @@ article{
 article h3{
     padding: 8px;
 }
+.logo{
+    width: 90vw;
+    max-width: 424px;
+}
 .mat-mdc-form-field {
     width: 100%;
     max-width: 600px;
@@ -42,9 +46,7 @@ article h3{
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
-.mat-mdc-card{
-    margin: 0 56px;
-}
+
 @media(min-width: 600px){
     article{
         padding: 36px;

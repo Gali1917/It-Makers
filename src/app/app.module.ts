@@ -20,6 +20,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesion.component';
+import { HomeComponent } from './components/home/home.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 
 
@@ -30,6 +33,9 @@ import {MatInputModule} from '@angular/material/input';
     AppComponent,
     CrearUsuarioComponent,
     ListarUsuariosComponent,
+    IniciarSesionComponent,
+    HomeComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
