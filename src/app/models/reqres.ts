@@ -1,3 +1,5 @@
+//Esquema de la api a consumir
+
 export class Reqres{
     id: number;
     email: string;

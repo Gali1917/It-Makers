@@ -6,11 +6,10 @@ import { Observable } from 'rxjs/internal/Observable';
     providedIn: 'root'
 })
 export class ReqresService {
+    //Consumo de api reqres.in
     url = "https://reqres.in/api/users/";
-
     constructor(private http: HttpClient) {
     }
-
     getReqres(): Observable<any> {
         return this.http.get(this.url);
     }

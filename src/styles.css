@@ -1,14 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
-
 html,
 body {
     height: 100%;
 }
-
 html {
     font-size: 62.5%;
 }
-
 body {
     font-size: 2rem;
     margin: 0;
@@ -19,9 +15,8 @@ body {
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
     color: white;
+    min-height: 100vh;
 }
 article{
     padding: 8px;
@@ -35,6 +30,7 @@ article h3{
 .logo{
     width: 90vw;
     max-width: 424px;
+    cursor: pointer;
 }
 .mat-mdc-form-field {
     width: 100%;
@@ -47,8 +43,35 @@ article h3{
     justify-content: space-evenly;
 }
 
+.footer-logo{
+    margin-top: 12px;
+    position: absolute;
+    right: 4px;
+}
+.footer-logo p{
+    margin: 2px 4px;
+    font-size: 1.6rem;
+    text-align: end;
+}
+.footer-logo img{
+    width: 120px;
+}
+
 @media(min-width: 600px){
     article{
         padding: 36px;
+    }
+    .footer-logo{
+        margin-top: 20px;
+        position: absolute;
+        right: 20px;
+    }
+    .footer-logo p{
+        margin: 8px 12px;
+        font-size: 2rem;
+        text-align: end;
+    }
+    .footer-logo img{
+        width: 180px;
     }
 }

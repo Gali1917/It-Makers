@@ -6,6 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesion.component';
 import { ListarUsuariosComponent } from './components/listar-usuarios/listar-usuarios.component';
 
+//Rutas de navegacion 
 const routes: Routes = [
     {path: 'usuario', component: ListarUsuariosComponent},
     {path: 'crear-usuario', component: CrearUsuarioComponent},

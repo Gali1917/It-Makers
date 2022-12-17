@@ -1,11 +1,12 @@
 <div class="container">
     <article class="article">
         <div class="buttons">
-            <!-- <button mat-raised-button color="primary" routerLink="/crear-usuario">Crear Usuario</button> -->
             <button mat-raised-button color="accent" routerLink="/home">Logout</button>
         </div>
         <mat-tab-group animationDuration="2000ms">
             <mat-tab class="titulo-cards" label="Usuarios registrados" >
+
+                <!-- Muestra los usuarios registrados en bucle -->
                 <li *ngFor="let usuario of listarUsuarios">
                     <mat-card class="card-users">
                         <mat-card-header>
@@ -19,13 +20,9 @@
                             <p>{{usuario.telefono}}</p>
                         </mat-card-content>
                         <mat-card-actions>
-                            <!-- <button [routerLink]="['/editar-usuario', usuario._id]" mat-button>Editar</button>
-                            <button (click)="eliminarUsuario(usuario._id)" mat-button>Borrar</button> -->
                         </mat-card-actions>
                     </mat-card>
-                    
                 </li>
-
             </mat-tab>
 
             <!-- Consumo de API reqres.in -->

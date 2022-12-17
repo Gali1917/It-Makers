@@ -1,28 +1,20 @@
-
 .buttons{
     position: sticky;
     top: 24px;
-    /* display: grid;
-    grid-template-columns: 1fr 1fr; */
     display: flex;
     flex-wrap: wrap;
     z-index: 2;
-
 }
 .buttons button{
     margin: 6px;
     width: 148px;
-
 }
-
 .card-users{
     width: 400px;
     margin: 0 auto;
     margin-top: 48px;
 }
-
 li{
     list-style: none;
     margin: 0 24px;
-
 }

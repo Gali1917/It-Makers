@@ -32,6 +32,7 @@ export class CrearUsuarioComponent implements OnInit {
     this.editar();
   }
 
+  //Agregar nuevo usuario
   agregarUsuario() {
     const usuario: Usuario = {
       nombre: this.usuarioForm.get('nombre')?.value,
@@ -41,7 +42,6 @@ export class CrearUsuarioComponent implements OnInit {
       password: this.usuarioForm.get('password')?.value,
 
     }
-
     if (this.id !== null) {
       //Editar Usuario
       this._usuarioService.editarUsuario(this.id, usuario).subscribe(data => {
@@ -55,7 +55,6 @@ export class CrearUsuarioComponent implements OnInit {
       //Agregar usuario
       console.log(usuario);
       this._usuarioService.nuevoUsuario(usuario).subscribe(data => {
-        
         this.toastr.success('El usuario fue registrado con exito!', 'Usuario Registrado!');
         this.router.navigate(['/home']);
       }, error => {

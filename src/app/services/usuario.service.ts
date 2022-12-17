@@ -7,11 +7,11 @@ import { SignIn } from '../models/signin';
 @Injectable({
   providedIn: 'root'
 })
+//Ruta de acceso al api
 export class UsuarioService {
   url = "http://localhost:5005/api/usuarios/";
 
   constructor(private http: HttpClient) {
-
   }
   getUsuarios(): Observable<any>{
     return this.http.get(this.url);
