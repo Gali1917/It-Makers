@@ -12,7 +12,7 @@ const routes: Routes = [
     {path: 'crear-usuario', component: CrearUsuarioComponent},
     {path: 'editar-usuario/:id', component: CrearUsuarioComponent},
     {path: 'iniciar-sesion', component: IniciarSesionComponent},
-    {path: 'home', component: HomeComponent},
+    {path: '', component: HomeComponent},
     {path: 'admin', component: AdminComponent},
     {path: '**', redirectTo: '', pathMatch: 'full'},
 ];

@@ -3,7 +3,7 @@
     <article class="article">
         <div class="buttons">
             <!-- <button mat-raised-button color="primary" routerLink="/crear-usuario">Crear Usuario</button> -->
-            <button mat-raised-button color="accent" routerLink="/home">Logout</button>
+            <button mat-raised-button color="accent" routerLink="/">Logout</button>
         </div>
         <mat-tab-group animationDuration="2000ms">
             <mat-tab class="titulo-cards" label="Usuarios registrados" >
@@ -23,10 +23,8 @@
                             <button [routerLink]="['/editar-usuario', usuario._id]" mat-button>Editar</button>
                             <button (click)="eliminarUsuario(usuario._id)" mat-button>Borrar</button>
                         </mat-card-actions>
-                    </mat-card>
-                    
+                    </mat-card>                
                 </li>
-
             </mat-tab>
 
             <!-- Consumo de API reqres.in -->

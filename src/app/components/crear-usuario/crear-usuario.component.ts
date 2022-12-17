@@ -56,7 +56,7 @@ export class CrearUsuarioComponent implements OnInit {
       console.log(usuario);
       this._usuarioService.nuevoUsuario(usuario).subscribe(data => {
         this.toastr.success('El usuario fue registrado con exito!', 'Usuario Registrado!');
-        this.router.navigate(['/home']);
+        this.router.navigate(['/']);
       }, error => {
         console.log(error);
         this.usuarioForm.reset();
